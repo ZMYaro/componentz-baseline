@@ -1,0 +1,146 @@
+/* ComponentZ Baseline Base Styles
+ *
+ * Copyright 2021 Zachary Yaro
+ * Released under the MIT license
+ * https://componentz.dev/LICENSE.txt
+ */
+
+:root {
+	color-scheme: light;
+}
+
+body {
+	background-color: var(--cz-background-color);
+	color: var(--cz-on-background-color);
+	font-family: var(--cz-body-font);
+}
+
+/* --------======== Borders ========-------- */
+hr {
+	border-style: solid;
+	border-width: 1px 0 0;
+	border-color: var(--cz-line-color);
+}
+
+/* --------======== Headings and typography ========-------- */
+h1 {
+	font-size: 150%;
+	font-weight: normal;
+}
+h2 {
+	font-size: 125%;
+	font-weight: 500; /* Medium */
+}
+h3 {
+	font-size: 110%;
+	font-weight: normal;
+}
+caption,
+figcaption {
+	font-size: 75%;
+	font-weight: normal;
+}
+
+a {
+	color: var(--cz-accent-color);
+}
+
+/* --------======== Monospace elements ========-------- */
+code,
+kbd,
+pre,
+samp,
+tt {
+	font-family: var(--cz-monospace-font);
+}
+
+kbd {
+	display: inline-block;
+	padding: 2px 8px;
+	margin: -2px 2px;
+	background-color: rgba(128, 128, 128, 0.25);
+	font: inherit; /* Override the default behavior of <kbd> having a monospace font. */
+}
+
+/* --------======== Interactive elements ========-------- */
+button,
+[role="button"],
+input,
+select,
+textarea {
+	appearance: none;
+	-webkit-tap-highlight-color: transparent !important;
+	color: inherit;
+	font: inherit;
+	outline: 0 none;
+	text-decoration: none;
+}
+
+button:enabled,
+input[type="button"]:enabled,
+input[type="submit"]:enabled,
+input[type="reset"]:enabled,
+input[type="checkbox"]:enabled,
+input[type="radio"]:enabled,
+input[type="range"]:enabled,
+select:enabled {
+	cursor: pointer;
+}
+
+button:disabled,
+input[type="button"]:disabled,
+input[type="submit"]:disabled,
+input[type="reset"]:disabled,
+input[type="checkbox"]:disabled,
+input[type="radio"]:disabled,
+input[type="range"]:disabled,
+select:disabled,
+input[type="text"]:disabled,
+input[type="search"]:disabled,
+input[type="password"]:disabled,
+input[type="email"]:disabled,
+input[type="url"]:disabled,
+input[type="number"]:disabled,
+input[type="tel"]:disabled,
+input[type="date"]:disabled,
+input[type="datetime-local"]:disabled,
+input[type="month"]:disabled,
+input[type="time"]:disabled,
+input[type="week"]:disabled,
+textarea:disabled {
+	cursor: not-allowed;
+}
+
+button,
+[role="button"],
+input[type="button"],
+input[type="submit"],
+input[type="reset"],
+select {
+	display: inline-block;
+	margin: 4px;
+	border: 0 none;
+	background-color: transparent;
+	-webkit-user-select: none;
+	        user-select: none;
+}
+
+/* --------======== Buttons ========--------*/
+button[type="submit"],
+input[type="submit"] {
+	background-color: var(--cz-accent-color);
+	color: var(--cz-on-accent-color);
+	
+	/* For using ::before as a highlight. */
+	position: relative;
+	overflow: hidden;
+}
+	button[type="submit"]::before,
+	input[type="submit"]::before {
+		/* The ::before is used to lighten and darken the accent color. */
+		content: '';
+		pointer-events: none;
+		display: block;
+		position: absolute;
+		inset: 0;
+	}

@@ -1,0 +1,38 @@
+/* ComponentZ Baseline Apple Human Interface Dark
+ *
+ * Copyright 2021 Zachary Yaro
+ * Released under the MIT license
+ * https://componentz.dev/LICENSE.txt
+ */
+
+:root {
+	--cz-background-color: #000000;
+	--cz-on-background-color: #ffffff;
+	--cz-primary-color: #121212;
+	--cz-on-primary-color: #ffffff;
+	--cz-accent-color: rgb(10, 132, 255);
+	--cz-on-accent-color: #ffffff;
+	--cz-line-color: #28282a;
+}
+
+/* --------======== Buttons ========-------- */
+button:not([type="submit"]),
+input[type="button"],
+input[type="reset"] {
+	background-color: transparent;
+}
+	button:not([type="submit"]):disabled,
+	input[type="button"]:disabled,
+	input[type="reset"]:disabled {
+		color: #ffffff;
+	}
+	button[type="submit"]:disabled,
+	input[type="submit"]:disabled {
+		background-color: #ffffff;
+	}
+
+/* --------======== Checkboxes and radio buttons ========-------- */
+	input[type="checkbox"]:enabled:active,
+	input[type="radio"]:enabled:active {
+		background-color: rgba(255, 255, 255, 0.1);
+	}

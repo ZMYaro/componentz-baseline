@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width" />
+		<script src="cz-baseline.js"></script>
+		<script>
+			window.addEventListener('DOMContentLoaded', function () {
+				document.getElementById('design-language-switch')['design-language'].value =
+					navigator.userAgent.match(/[^A-Z^0-9]windows[^A-Z^0-9]/i) ? 'fluent' :
+					navigator.userAgent.match(/[^A-Z^0-9]mac os[^A-Z^0-9]/i) ? 'hig' :
+					navigator.userAgent.match(/[^A-Z^0-9](android|cros)[^A-Z^0-9]/i) ? 'material' : '';
+				document.getElementById('design-language-switch').addEventListener('change', function () {
+					document.getElementById('cz-theme').href =
+						document.getElementById('cz-theme').href.replace(/(fluent|hig|material)/, this['design-language'].value);
+					document.getElementById('cz-dark-theme').href =
+						document.getElementById('cz-dark-theme').href.replace(/(fluent|hig|material)/, this['design-language'].value);
+				});
+			});
+		</script>
+		<style>
+			#design-language-switch {
+				display: flex;
+				flex-direction: column;
+				line-height: 175%;
+			}
+				#design-language-switch label {
+					margin-right: 1em;
+				}
+			@media (min-width: 43.75rem) {
+				#design-language-switch {
+					flex-direction: row;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<h1>ComponentZ Baseline Test</h1>
+		<hr />
+		<form id="design-language-switch">
+			<label>
+				<input type="radio" name="design-language" value="fluent" /><!--
+				-->Fluent (Windows)
+			</label>
+			<label>
+				<input type="radio" name="design-language" value="hig" /><!--
+				-->HIG (iOS/iPadOS/MacOS)
+			</label>
+			<label>
+				<input type="radio" name="design-language" value="material" /><!--
+				-->Material (Android/Chrome OS)
+			</label>
+		</form>
+		<hr />
+		<h1>Heading 1</h1>
+		<h2>Heading 2</h2>
+		<h3>Heading 3</h3>
+		<button type="button">Basic button</button>
+		<button disabled="disabled">Disabled button</button>
+		<br />
+		<button type="submit" onclick="event.preventDefault();">Submit button</button>
+		<button type="submit" disabled="disabled">Disabled submit</button>
+		<br />
+		<br />
+		<select>
+			<option>Lorem ipsum</option>
+			<option>Dolor sit</option>
+			<option>Amet consectetur</option>
+			<option>Adipiscing elit</option>
+		</select>
+		<select disabled="disabled">
+			<option>Disabled ipsum</option>
+			<option>Dolor sit</option>
+			<option>Amet consectetur</option>
+			<option>Adipiscing elit</option>
+		</select>
+		<br />
+		<br />
+		<input type="checkbox" />
+		<input type="checkbox" checked="checked" />
+		<input type="checkbox" disabled="disabled" />
+		<input type="checkbox" checked="checked" disabled="disabled" />
+		<br />
+		<br />
+		<input type="radio" name="radio-set1" />
+		<input type="radio" name="radio-set1" checked="checked" />
+		<input type="radio" name="radio-set2" disabled="disabled" />
+		<input type="radio" name="radio-set2" checked="checked" disabled="disabled" />
+		<br />
+		<br />
+		<input type="text" placeholder="Text field" />
+		<input type="text" placeholder="Disabled text field" disabled="disabled" />
+	</body>
+</html>

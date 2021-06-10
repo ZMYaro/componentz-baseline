@@ -1,0 +1,37 @@
+/* ComponentZ Baseline Material Dark
+ *
+ * Copyright 2021 Zachary Yaro
+ * Released under the MIT license
+ * https://componentz.dev/LICENSE.txt
+ */
+
+:root {
+	color-scheme: dark;
+	
+	--cz-background-color: #121212;
+	--cz-on-background-color: #ffffff;
+}
+
+/* --------======== Buttons and drop-downs ========-------- */
+select:not([size]) {
+	background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjcgMTAgMTAgNSI+PHBvbHlnb24gZmlsbD0iIzc1NzU3NSIgZmlsbC1ydWxlPSJldmVub2RkIiBwb2ludHM9IjcgMTAgMTIgMTUgMTcgMTAiPjwvcG9seWdvbj48L3N2Zz4=');
+}
+	button:not([type="submit"]):enabled:hover,
+	input[type="button"]:enabled:hover,
+	input[type="reset"]:enabled:hover,
+	select:not([size]):enabled:hover {
+		background-color: rgba(255, 255, 255, 0.04);
+	}
+	button:not([type="submit"]):focus-visible,
+	input[type="button"]:focus-visible,
+	input[type="reset"]:focus-visible,
+	select:not([size]):focus-visible {
+		background-color: rgba(255, 255, 255, 0.12);
+	}
+	button:not([type="submit"]):enabled:active,
+	[role="button"]:enabled:active,
+	input[type="button"]:enabled:active,
+	input[type="reset"]:enabled:active,
+	select:not([size]):enabled:active {
+		background-color: rgba(255, 255, 255, 0.16);
+	}

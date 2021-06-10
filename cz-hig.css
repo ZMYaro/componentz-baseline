@@ -1,0 +1,225 @@
+/* ComponentZ Baseline Apple Human Interface Light
+ *
+ * Copyright 2021 Zachary Yaro
+ * Released under the MIT license
+ * https://componentz.dev/LICENSE.txt
+ */
+
+:root {
+	--cz-background-color: #f2f2f7;
+	--cz-on-background-color: #000000;
+	--cz-primary-color: #fafbfc;
+	--cz-on-primary-color: #000000;
+	--cz-accent-color: rgb(0, 122, 255);
+	--cz-on-accent-color: #ffffff;
+	--cz-line-color: #eaebeb;
+	
+	--cz-body-font: system-ui, -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Helvetica Neue', Helvetica, sans-serif;
+	--cz-monospace-font: 'SF Mono', Menlo, monospace;
+}
+
+body {
+	font-size: 1.0625rem; /* 17px default */
+}
+
+/* --------======== Headings and typography ========-------- */
+/* TODO */
+h2 {
+	font-size: 1.75rem;
+	font-weight: 600;
+}
+
+/* --------======== Interactive elements ========-------- */
+button,
+input[type="button"],
+input[type="submit"],
+input[type="reset"],
+select,
+input[type="text"],
+input[type="search"],
+input[type="password"],
+input[type="email"],
+input[type="url"],
+input[type="number"],
+input[type="tel"],
+input[type="date"],
+input[type="datetime-local"],
+input[type="month"],
+input[type="time"],
+input[type="week"],
+textarea,
+input[type="checkbox"] {
+	border-radius: 6px;
+}
+
+/* --------======== Buttons ========-------- */
+button,
+input[type="button"],
+input[type="submit"],
+input[type="reset"] {
+	padding: 0.5rem 0.9375rem 0.5625rem; /* 8px 15px 9px default */
+	background-color: #ffffff;
+	color: var(--cz-accent-color);
+}
+	button[type="submit"],
+	input[type="submit"] {
+		background-color: color(--cz-accent-color);
+		color: var(--cz-on-accent-color);
+	}
+	button:enabled:active,
+	input[type="button"]:enabled:active,
+	input[type="submit"]:enabled:active,
+	input[type="reset"]:enabled:active {
+		opacity: 0.4;
+	}
+	button:not([type="submit"]):disabled,
+	input[type="button"]:disabled,
+	input[type="reset"]:disabled {
+		color: #000000;
+	}
+	button[type="submit"]:disabled,
+	input[type="submit"]:disabled {
+		background-color: #000000;
+	}
+
+/* --------======== Text fields and drop-downs ========-------- */
+input[type="text"],
+input[type="search"],
+input[type="password"],
+input[type="email"],
+input[type="url"],
+input[type="number"],
+input[type="tel"],
+input[type="date"],
+input[type="datetime-local"],
+input[type="month"],
+input[type="time"],
+input[type="week"],
+textarea,
+select {
+	padding: 8px 15px 9px;
+	background-color: #ffffff;
+	border: 1px solid #d6d6d6;
+	outline: 0 none transparent;
+}
+	input[type="text"]:enabled:focus,
+	input[type="search"]:enabled:focus,
+	input[type="password"]:enabled:focus,
+	input[type="email"]:enabled:focus,
+	input[type="url"]:enabled:focus,
+	input[type="number"]:enabled:focus,
+	input[type="tel"]:enabled:focus,
+	input[type="date"]:enabled:focus,
+	input[type="datetime-local"]:enabled:focus,
+	input[type="month"]:enabled:focus,
+	input[type="time"]:enabled:focus,
+	input[type="week"]:enabled:focus,
+	textarea:enabled:focus {
+		border-color: var(--cz-accent-color);
+		outline: 0 none transparent;
+	}
+select:not([size]) {
+	padding: 0 20px 0 10px;
+	
+	/* TODO: Figure out how to make this follow the accent color. */
+	background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxNiAxNiI+PHBhdGggZmlsbD0icmdiKDAsIDEyMiwgMjU1KSIgZD0iTTEyLjUsMTZjMS40NzMsMCwzLjUtMi4wMjcsMy41LTMuNXYtOUMxNiwyLjAyNywxMy45NzMsMCwxMi41LDBoLTlDMi4wMjcsMCwwLDIuMDI3LDAsMy41djlDMCwxMy45NzMsMi4wMjcsMTYsMy41LDE2Ii8+PHBhdGggZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZmZmZmZmIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbWl0ZXJsaW1pdD0iMTAiIGQ9Ik00Ljg4OSw2LjE0M0w4LDMuMTE0IGwzLjExMSwzLjAyOCBNNC44ODksOS44NTdMOCwxMi44ODZsMy4xMTEtMy4wMjgiLz48L3N2Zz4=');
+	background-size: 16px 16px;
+	background-origin: border-box;
+	background-repeat: no-repeat;
+	background-position: calc(100% - 4px) center;
+	
+	color: #000000;
+}
+
+/* --------======== Checkboxes and radio buttons ========-------- */
+input[type="checkbox"],
+input[type="radio"] {
+	position: relative;
+	display: inline-block;
+	vertical-align: middle;
+	margin: -0.1em 5px 0.1em;
+	width: 14px;
+	height: 14px;
+	background-color: #ffffff;
+	border: 1px solid rgba(0, 0, 0, 0.25);
+}
+	input[type="checkbox"]:focus-visible,
+	input[type="radio"]:focus-visible {
+		border-color: var(--cz-accent-color);
+	}
+		input[type="checkbox"]:focus-visible::before,
+		input[type="radio"]:focus-visible::before {
+			/* The ::before is used to enable a translucent focus ring. */
+			content: '';
+			display: block;
+			position: absolute;
+			inset: 0;
+			opacity: 0.5;
+			box-shadow: 0 0 0 4px var(--cz-accent-color);
+		}
+	input[type="checkbox"]:enabled:active,
+	input[type="radio"]:enabled:active {
+		background-color: rgba(0, 0, 0, 0.1);
+	}
+	input[type="checkbox"]:checked,
+	input[type="radio"]:checked {
+		background-color: var(--cz-accent-color);
+		border-color: var(--cz-accent-color);
+	}
+		input[type="checkbox"]:checked::after,
+		input[type="radio"]:checked::after {
+			/* The ::after is used as the check mark or dot in the radio button. */
+			content: '';
+			display: block;
+			position: absolute;
+		}
+input[type="checkbox"],
+input[type="checkbox"]::before {
+	border-radius: 3.5px;
+}
+	input[type="checkbox"]:checked::after {
+		/* The ::after is used as the check mark. */
+		
+		inset: 0;
+		
+		background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxNCAxNCI+PHBvbHlsaW5lIGZpbGw9InRyYW5zcGFyZW50IiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBzdHJva2UtbWl0ZXJsaW1pdD0iMTAiIHBvaW50cz0iMy4zNzksNy40MDEgNi4wNSwxMC43NSAxMC42MjEsMy41MzggIi8+PC9zdmc+);
+		background-size: 14px 14px;
+		background-repeat: no-repeat;
+		background-position: center center;
+	}
+input[type="radio"],
+input[type="radio"]::before {
+	border-radius: 50%;
+}
+	input[type="radio"]:checked::after {
+		/* The ::after is used as the dot in the checked radio button. */
+		
+		inset: 25%;
+		border-radius: 50%;
+		background-color: #ffffff;
+	}
+
+/* --------======== Disabled elements ========-------- */
+button:disabled,
+input[type="button"]:disabled,
+input[type="submit"]:disabled,
+input[type="reset"]:disabled,
+input[type="checkbox"]:disabled,
+input[type="radio"]:disabled,
+input[type="range"]:disabled,
+select:disabled,
+input[type="text"]:disabled,
+input[type="search"]:disabled,
+input[type="password"]:disabled,
+input[type="email"]:disabled,
+input[type="url"]:disabled,
+input[type="number"]:disabled,
+input[type="tel"]:disabled,
+input[type="date"]:disabled,
+input[type="datetime-local"]:disabled,
+input[type="month"]:disabled,
+input[type="time"]:disabled,
+input[type="week"]:disabled,
+textarea:disabled {
+	opacity: 0.3;
+}
