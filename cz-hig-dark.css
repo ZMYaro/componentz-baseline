@@ -29,6 +29,7 @@ input[type="reset"] {
 	button[type="submit"]:disabled,
 	input[type="submit"]:disabled {
 		background-color: #ffffff;
+		color: #000000;
 	}
 
 /* --------======== Checkboxes and radio buttons ========-------- */
