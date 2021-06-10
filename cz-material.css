@@ -69,6 +69,7 @@ input[type="reset"]{
 	text-transform: uppercase;
 	font-size: 0.875rem; /* 14px default */
 	font-weight: 500; /* Medium */
+	color: var(--cz-accent-color);
 	
 	transition: background-color 0.1s linear;
 }
